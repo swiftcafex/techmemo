@@ -1,0 +1,34 @@
+## 通过 SSH Key 登录服务器
+
+生成 key
+```
+ssh-keygen
+```
+
+将生成的 key copy 到服务器:
+
+```
+ssh-copy-id username@remote_host
+```
+
+
+## 取消密码登录
+
+编辑 ssh 配置文件
+
+```
+sudo vi /etc/ssh/sshd_config
+```
+
+编辑选项
+
+```
+PasswordAuthentication no
+```
+
+
+重启 ssh 服务
+
+```
+sudo systemctl restart sshd.service
+```
